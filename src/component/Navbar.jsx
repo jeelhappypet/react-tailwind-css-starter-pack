@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { decrement, incrementByAmount, multiply, reset } from "../redux/slice/counterSlice";
 
 
+
 const Navbar = () => {
-  const count = useSelector((state) => state.counter.value);
-  const dispatch = useDispatch();
-  const Amount = 10;
+const count = useSelector((state) => state.counter.value);
+const dispatch = useDispatch();
+const Amount = 10;
+
   return (
     <div className="w-full max-w-md rounded-3xl border border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-emerald-50 p-6 shadow-xl">
       <div className="mb-5 flex items-center justify-between">
@@ -30,7 +32,7 @@ const Navbar = () => {
           onClick={() => dispatch(decrement())}
           className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-sm font-semibold text-rose-700 transition hover:bg-rose-100"
         >
-          - 1
+          - {count}
         </button>
         <button
           onClick={() => dispatch(incrementByAmount(Amount))}
